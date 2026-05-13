@@ -1,6 +1,7 @@
 import numpy as np
 import sys
-sys.path.append('..')
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from config.robot_config import *
 
 #ik function
