@@ -54,17 +54,28 @@ ax1.legend()
 ax1.grid(True)
 ax1.invert_yaxis()
 
-# RIGHT PLOT — Foot trajectory
+# RIGHT PLOT — Foot trajectory comparison
 x_traj, z_traj = compute_trajectory()
-ax2.plot(x_traj, z_traj, color='blue', linewidth=2)
-ax2.axhline(y=0, color='grey', linestyle='--', label='Ground level')
-ax2.set_title("Foot Swing Trajectory (Half Ellipse)")
+
+ground_orig = 0.213 + 0.213 * 0.85
+ground_impr = 0.213 + 0.255 * 0.85
+
+ax2.plot(x_traj, [ground_orig - z for z in z_traj],
+         color='grey', linewidth=2, label='Original (calf 213mm)')
+ax2.plot(x_traj, [ground_impr - z for z in z_traj],
+         color='blue', linewidth=2, label='Improved (calf 255mm)')
+ax2.axhline(y=ground_orig, color='grey', linestyle='--', alpha=0.5)
+ax2.axhline(y=ground_impr, color='blue', linestyle='--', alpha=0.5)
+ax2.set_title("Foot Swing Trajectory — Improved Leg Reaches Further Down")
 ax2.set_xlabel("Forward/Backward (m)")
-ax2.set_ylabel("Height (m)")
+ax2.set_ylabel("Depth from Hip (m)")
 ax2.legend()
 ax2.grid(True)
+ax2.invert_yaxis()
 
-plt.tight_layout()
+ax2.annotate('Improved reaches\n3.6cm deeper', xy=(0, 0.430), 
+             xytext=(0.02, 0.41), color='blue', fontsize=9,
+             arrowprops=dict(arrowstyle='->', color='blue'))
 
 plt.savefig('results/workspace_comparison.png', dpi=150, bbox_inches='tight')
 print("Saved to results/workspace_comparison.png")
