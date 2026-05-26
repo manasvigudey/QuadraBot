@@ -149,7 +149,9 @@ QuadraBot/
 ├── go1_improved_nomesh.urdf   — improved robot (primitive shapes)
 ├── go1_original_nomesh.urdf   — original Go1 parameters
 ├── go1_improved.urdf          — improved robot (full mesh)
-├── requirements.txt
+├── requirements.txt           — Python dependencies
+├── LICENSE                    — MIT License
+├── README.md
 │
 ├── learning/
 │   ├── learn_ik.py            — IK solver built step by step
@@ -163,8 +165,8 @@ QuadraBot/
 │   └── robot_config.py        — all robot parameters centralised
 │
 └── results/
-├── simulation_demo.mp4    — comparison simulation video
-└── workspace_comparison.png — kinematic analysis plots
+    ├── simulation_demo.mp4        — comparison simulation video
+    └── workspace_comparison.png  — kinematic analysis plots
 ```
 ---
 
