@@ -116,7 +116,7 @@ Original Go1 parameters vs improved parameters walking simultaneously:
 ```bash
 git clone https://github.com/manasvigudey/QuadraBot
 cd QuadraBot
-pip install pybullet numpy matplotlib
+pip install -r requirements.txt
 ```
 
 **Run simulations**
